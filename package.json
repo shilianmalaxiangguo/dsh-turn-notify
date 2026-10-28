@@ -1,0 +1,48 @@
+{
+  "name": "dsh-turn-notify",
+  "version": "1.1.0",
+  "description": "DSH plugin: a bottom-right desktop popup for every finished turn that the user must dismiss by hand, plus a settings page.",
+  "license": "MIT",
+  "author": "shilianmalaxiangguo",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "notification",
+    "popup",
+    "windows",
+    "xp-luna"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shilianmalaxiangguo/dsh-turn-notify.git"
+  },
+  "homepage": "https://github.com/shilianmalaxiangguo/dsh-turn-notify#readme",
+  "bugs": {
+    "url": "https://github.com/shilianmalaxiangguo/dsh-turn-notify/issues"
+  },
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/",
+    "README.md"
+  ],
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

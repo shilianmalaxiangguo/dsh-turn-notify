@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+
+# Runtime state written next to the plugin while it runs
+turn-notify*.json
+turn-notify*.jsonl
+turn-notify*.log
+
+# Scratch files
+*.tmp
+*.log
