@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Turn Notify",
+    "description": "Shows a bottom-right Windows XP Luna card when a turn finishes. The card never closes itself: dismiss it with the close button, a right-click, or Esc. A settings page controls the switch, the filters, and the sound."
+  }
+}

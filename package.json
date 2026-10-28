@@ -1,6 +1,6 @@
 {
   "name": "dsh-turn-notify",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "DSH plugin: a bottom-right desktop popup for every finished turn that the user must dismiss by hand, plus a settings page.",
   "license": "MIT",
   "author": "shilianmalaxiangguo",
@@ -26,13 +26,21 @@
   "exports": {
     ".": "./lib/index.js",
     "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
     "./package.json": "./package.json"
   },
   "files": [
     "lib/",
+    "locale/",
+    "cordis.patch.yml",
+    "icon.svg",
     "README.md"
   ],
   "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
     "client": {
       "platform": "web",
       "inject": [
@@ -43,6 +51,7 @@
     }
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20",
+    "dsh": ">=0.2.1-rc.3"
   }
 }

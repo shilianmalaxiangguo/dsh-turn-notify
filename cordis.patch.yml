@@ -1,0 +1,16 @@
+# Bundle patch for dsh-turn-notify.
+#
+# The plugin manager installs this package as a profile dependency, and this
+# file inserts the plugin row. `name` is the package name, so the Loader
+# resolves the entry from the profile's node_modules.
+#
+# The row id is `turn-notify`. A hand-wired entry that inserts the plugin by
+# path uses that same id, so delete that entry before installing this bundle —
+# two rows with one id would load the plugin twice.
+#
+# Settings the plugin understands may be written here; the settings page
+# outranks them. `config: {}` keeps the plugin's own defaults.
+- insert:
+    - id: turn-notify
+      name: 'dsh-turn-notify'
+      config: {}
