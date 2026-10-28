@@ -16,11 +16,42 @@ DSH 插件：每一轮任务结束时，在**桌面右下角**弹出一张置顶
 
 要求：**Windows** + DSH 桌面版。宿主半边运行在 DSH 宿主进程里，靠 PowerShell 画原生窗口，所以没有跨平台回退。
 
+本仓库同时是一个 DSH **组合包**（`package.json` 里的 `dsh.bundle.patch`），所以有两种装法。
+
+### 装法一：作为组合包安装
+
+能被插件管理器启用、禁用、卸载，也是**插件市场**里那种装法。
+
+1. 先启用随包提供、但默认关闭的市场组合包 `@deepseek-ai/dsh-experimental-plugin-market-bundle`：
+   「插件」页的**发现**标签由它挂载，没有它那里只有「已安装」。
+2. 在「插件 → 发现 → 添加索引源」加入本仓库的索引：
+
+   ```
+   https://raw.githubusercontent.com/shilianmalaxiangguo/dsh-turn-notify/main/market/index.json
+   ```
+
+   索引把版本钉死在发布提交上，装的就是那个提交的内容；随后在卡片上点「安装」。
+
+也可以跳过索引，直接按 spec 安装（同一个提交）：
+
+```
+git+https://github.com/shilianmalaxiangguo/dsh-turn-notify.git#13adcb72791b8dc6b5b8988a3f9152a0f8ee6268
+```
+
+### 装法二：手动放进 profile
+
 1. 把本仓库放进 profile 的插件目录：`<DSH_HOME>/profiles/<profile>/plugins/dsh-turn-notify/`（`<DSH_HOME>` 默认是 `~/.dsh`）。
 2. 在 `<DSH_HOME>/profiles/<profile>/cordis.patch.yml` 末尾追加装载条目（代码块见下方「安装位置」）。
 3. 重启一次 DSH：设置页那一节只会在重启后的客户端模块扫描里出现，原因见「客户端半边的坑」。
 
+> 两种装法**不要同时用**：组合包补丁和手写条目都用 id `turn-notify`，同时存在会把插件加载两次，弹出两张卡片。
+
 装好后在 **设置 → 任务通知** 里开关与调参，用「测试弹窗」立即预览。
+
+### 版本要求
+
+`engines.dsh` 声明为 `>=0.2.1-rc.3`（当前桌面版的运行时版本，已实测该行被正常加载）。
+DSH 一旦换到新的预发布版本，这个范围可能不再匹配，插件会被拒绝加载——届时在插件管理器里对它授予**版本豁免**，或把范围改宽后重新发版。
 
 ## 安装位置
 

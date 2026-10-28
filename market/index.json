@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "title": {
+    "en": "dsh-turn-notify",
+    "zh": "任务完成弹窗通知"
+  },
+  "description": {
+    "en": "A Windows XP Luna notification card for DeepSeek Harness: every finished turn pops a topmost card in the bottom-right corner that stays until you dismiss it.",
+    "zh": "给 DeepSeek Harness 用的 Windows XP Luna 风格通知卡片：每轮任务结束时在桌面右下角弹出置顶卡片，不手动关闭就不会消失。"
+  },
+  "metadata": {
+    "categories": {
+      "notifications": {
+        "title": { "en": "Notifications", "zh": "通知提醒" }
+      }
+    },
+    "labels": {
+      "windows": {
+        "title": { "en": "Windows", "zh": "Windows" }
+      },
+      "desktop": {
+        "title": { "en": "Desktop app", "zh": "桌面应用" }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "dsh-turn-notify",
+      "title": {
+        "en": "Turn Notify",
+        "zh": "任务完成弹窗通知"
+      },
+      "description": {
+        "en": "Pops a bottom-right Windows XP Luna card when a turn finishes or the agent stops to ask you something. The card never closes itself: dismiss it with the close button, a right-click, or Esc. A settings page controls the switch, the filters, the sound, and DSH autostart.",
+        "zh": "每轮任务结束、或智能体停下来等你确认时，在桌面右下角弹出 Windows XP Luna 风格卡片。卡片不会自动消失，要用关闭按钮 / 右键 / Esc 手动关掉。设置页可开关、调参、试听提示音，并可设置开机自启 DSH。"
+      },
+      "icon": "../icon.svg",
+      "author": "shilianmalaxiangguo",
+      "homepage": "https://github.com/shilianmalaxiangguo/dsh-turn-notify#readme",
+      "repository": {
+        "url": "https://github.com/shilianmalaxiangguo/dsh-turn-notify"
+      },
+      "metadata": {
+        "category": "notifications",
+        "keywords": [
+          "notification",
+          "popup",
+          "windows",
+          "turn-end",
+          "xp-luna"
+        ],
+        "labels": [
+          "windows",
+          "desktop"
+        ]
+      },
+      "versions": [
+        {
+          "version": "1.2.0",
+          "publishTimestamp": 1793151389,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/shilianmalaxiangguo/dsh-turn-notify",
+            "commit": "13adcb72791b8dc6b5b8988a3f9152a0f8ee6268"
+          },
+          "engines": {
+            "dsh": ">=0.2.1-rc.3"
+          }
+        }
+      ]
+    }
+  ]
+}
